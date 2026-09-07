@@ -355,6 +355,7 @@ h3 {
 .feature p,
 .guide p,
 .split p,
+.guide-card p,
 .store-panel p,
 .faq p,
 .final-cta p {
@@ -382,6 +383,45 @@ h3 {
 
 .store-panel p {
   max-width: 700px;
+  margin: 12px 0 0;
+}
+
+.guide-card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.guide-card {
+  display: block;
+  min-height: 250px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: inherit;
+  background: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 14px 34px rgba(28, 35, 82, 0.06);
+}
+
+.guide-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 48px rgba(28, 35, 82, 0.12);
+}
+
+.guide-card span {
+  display: inline-flex;
+  margin-bottom: 16px;
+  padding: 6px 9px;
+  border-radius: 999px;
+  color: var(--teal);
+  background: rgba(8, 127, 140, 0.1);
+  font-size: 0.75rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.guide-card p {
   margin: 12px 0 0;
 }
 
@@ -651,6 +691,55 @@ article p {
   line-height: 1.75;
 }
 
+.content-page {
+  width: min(940px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: clamp(34px, 7vw, 72px) 0;
+}
+
+.answer-article {
+  padding: clamp(28px, 6vw, 58px);
+}
+
+.answer-article h1 {
+  max-width: 780px;
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  line-height: 1;
+}
+
+.answer-article h2 {
+  margin-top: 38px;
+  font-size: clamp(1.55rem, 3vw, 2.25rem);
+}
+
+.answer-box {
+  margin: 28px 0 0;
+  padding: 22px;
+  border-left: 4px solid var(--teal);
+  border-radius: 8px;
+  color: var(--ink);
+  background: #eef5f2;
+  font-size: 1.12rem;
+  font-weight: 650;
+}
+
+.content-steps,
+.content-list {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 0;
+  padding-left: 22px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.article-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
 @media (max-width: 920px) {
   .hero,
   .guide,
@@ -678,6 +767,10 @@ article p {
   }
 
   .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .guide-card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -736,6 +829,7 @@ article p {
   }
 
   .feature-grid,
+  .guide-card-grid,
   .card-grid {
     grid-template-columns: 1fr;
   }
